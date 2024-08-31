@@ -1,0 +1,15 @@
+<div class="container row">
+<h2>Conversación</h2>
+@for (mensaje of mensajes; track mensaje.usuario) {
+    <p>{{mensaje.usuario}}: {{mensaje.contenido}}</p>
+}
+</div>
+
+
+<div class="container row">
+        
+        @for (usuario of usuarios; track usuario) {
+            
+            <app-mensaje-usuario [usuario] = "usuario" (onEnviarContenido)="mostrarConversacion($event)"></app-mensaje-usuario>
+        }
+</div>
