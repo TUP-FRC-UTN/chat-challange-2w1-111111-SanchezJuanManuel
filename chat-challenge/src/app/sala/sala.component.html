@@ -1,0 +1,9 @@
+<h1>Conversacion</h1>
+@for (mensaje of mensajes; track mensaje.usuario) {
+<p>{{mensaje.usuario}} dice: </p>
+<p>{{mensaje.contenido}}</p>
+}
+@for (usuario of usuarios; track usuario) {
+
+    <app-mensaje-usuario [usuario] = "usuario" (onEnviarContenido)="mostrarConversacion($event)"></app-mensaje-usuario>
+}
